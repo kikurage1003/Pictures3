@@ -18,12 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-NJ-PkG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-j4-cTX">
-                                <rect key="frame" x="1" y="0.0" width="374" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-5f-FxV">
-                                        <rect key="frame" x="-1" y="623" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="581" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <items>
                                             <barButtonItem systemItem="action" id="Zh3-dB-rCw">
@@ -43,21 +47,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-vy-0a2" customClass="SwiftyCamButton" customModule="camera">
-                                <rect key="frame" x="134" y="540" width="107" height="107"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlS-Ri-4tc">
+                                <rect key="frame" x="134" y="550" width="107" height="107"/>
                                 <state key="normal" backgroundImage="maru"/>
+                                <connections>
+                                    <action selector="takephoto:" destination="s30-8Z-cc9" eventType="touchUpInside" id="kCh-mC-W7X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="QxF-vy-0a2" secondAttribute="bottom" constant="20" id="5DJ-vE-mKd"/>
-                            <constraint firstItem="QxF-vy-0a2" firstAttribute="centerX" secondItem="Hze-pP-8Rj" secondAttribute="centerX" id="7un-Lb-L4W"/>
+                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="mlS-Ri-4tc" secondAttribute="bottom" constant="10" id="7sL-yL-rFF"/>
+                            <constraint firstItem="mlS-Ri-4tc" firstAttribute="centerX" secondItem="Hze-pP-8Rj" secondAttribute="centerX" id="uiz-ZF-BA2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NXL-wD-zfZ"/>
                     </view>
                     <connections>
                         <outlet property="previewView" destination="DeZ-j4-cTX" id="5Iz-FE-sZm"/>
-                        <outlet property="shutterButton" destination="QxF-vy-0a2" id="79E-dR-r8b"/>
+                        <outlet property="shutterButton" destination="mlS-Ri-4tc" id="Ian-tQ-V1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPY-oB-tjJ" sceneMemberID="firstResponder"/>
