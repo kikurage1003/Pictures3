@@ -40,11 +40,15 @@ class MasterViewController: UITableViewController{
     var smartAlbums: PHFetchResult<PHAssetCollection>!
     var userCollections: PHFetchResult<PHCollection>!
     let sectionLocalizedTitles = ["", NSLocalizedString("Smart Albums", comment: ""), NSLocalizedString("Albums", comment: "")]
-    
+    var thumbnail:CGSize!
     // MARK: UIViewController / Lifecycle
     //ロード時に呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let scale = UIScreen.main.scale;
+        
+        thumbnail = CGSize(width:120, height: 120)
         
         //ボタン機能のインスタンス化？
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addAlbum))
@@ -141,33 +145,47 @@ class MasterViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        self.tableView.rowHeight = 120
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
-            let cell = tableView.dequeueReusableCell(withIdentifier: SegueIdentifier.showAllPhotos.rawValue,for : indexPath);
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.allPhotos.rawValue, for: indexPath)
             cell.textLabel!.text = NSLocalizedString("All Photos", comment: "")
-          
+            let options = PHFetchOptions();
+            options.sortDescriptors = [NSSortDescriptor(key:("creationDate"),ascending:false)]
+            let result = PHAsset.fetchAssets(with: .image, options: options);
+            if let asset = result.firstObject {
+                let manager: PHImageManager = PHImageManager()
+                manager.requestImage(for: asset,
+                                     targetSize: thumbnail,
+                                     contentMode: .aspectFill, options: nil,
+                                     resultHandler:{image,options in
+                                        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFill;
+                                        let temp = image;
+                                        
+                                        cell.imageView!.image = temp!.resize(size: CGSize(width: 120, height: 120));
+                })
+            }
             return cell
             
         case .smartAlbums:
             let collection = smartAlbums.object(at: indexPath.row)
-            //let cell = UITableViewCell(style: .default, reuseIdentifier: "collection");
             let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for: indexPath);
             cell.textLabel!.text = collection.localizedTitle;
             //画像を全て取得
-            let assets = PHAsset.fetchAssets(in: collection, options: nil)
-            
             let options = PHFetchOptions();
-            let result = PHAsset.fetchAssets(with: .image, options: options);
+            options.sortDescriptors = [NSSortDescriptor(key:("creationDate"),ascending:false)]
+            let assets = PHAsset.fetchAssets(in: collection, options: options)
+            
             if let asset = assets.firstObject {
                 let manager: PHImageManager = PHImageManager()
                 manager.requestImage(for: asset,
-                                     targetSize: CGSize(width:100,height:100),
+                                     targetSize: thumbnail,
                                      contentMode: .aspectFill, options: nil,
                                      resultHandler:{image,options in
-                                        cell.imageView!.image = image;
-                                    
                                         
+                                        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFill;
+                                        let temp = image;
+                                        
+                                        cell.imageView!.image = temp!.resize(size: CGSize(width: 120, height: 120));
                                         
                 })
             }
@@ -176,9 +194,22 @@ class MasterViewController: UITableViewController{
         case .userCollections:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.collection.rawValue,for : indexPath);
             let collection = userCollections.object(at: indexPath.row)
-            print("user\(collection.localizedTitle)");
             cell.textLabel!.text = collection.localizedTitle
-            //cell.title!.text = collection.localizedTitle;
+            //画像を全て取得
+            let options = PHFetchOptions();
+            options.sortDescriptors = [NSSortDescriptor(key:("creationDate"),ascending:false)]
+            let assets = PHAsset.fetchAssets(in: collection as! PHAssetCollection, options: options)
+            if let asset = assets.firstObject {
+                let manager: PHImageManager = PHImageManager()
+                manager.requestImage(for: asset,
+                                     targetSize: thumbnail,
+                                     contentMode: .aspectFill, options: nil,
+                                     resultHandler:{image,options in
+                                        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit;
+                                        let temp = image;
+                                        cell.imageView!.image = temp!.resize(size: CGSize(width: 120, height: 120));
+                })
+            }
             return cell
         }
     }
@@ -186,7 +217,9 @@ class MasterViewController: UITableViewController{
         return sectionLocalizedTitles[section]
     }
     
+    
 }
+
 
 // MARK: PHPhotoLibraryChangeObserver
 extension MasterViewController: PHPhotoLibraryChangeObserver {
@@ -215,5 +248,25 @@ extension MasterViewController: PHPhotoLibraryChangeObserver {
             
         }
     }
+    
+}
+
+extension UIImage{
+    func resize(size: CGSize) -> UIImage {
+        /*
+         let widthRatio = size.width / self.size.width
+         let heightRatio = size.height / self.size.height
+         //let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
+         let ratio = widthRatio;
+         */
+        let resizedSize =  size;
+        // 画質を落とさないように以下を修正
+        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
+        draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage!
+    }
+    
 }
 

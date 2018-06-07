@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         #endif
        
  */
-        let tabBarController = self.window!.rootViewController as! UITabBarController;
+//        let tabBarController = self.window!.rootViewController as! UITabBarController;
         //let navigationController = tabBarController.viewControllers?.last! as! UINavigationController
         //navigationController.topViewController!.navigationItem.leftBarButtonItem = tabBarController.displayModeButtonItem
          //splitViewController.delegate = self

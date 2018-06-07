@@ -35,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="tYk-Ve-ldO" kind="showDetail" identifier="showAllPhotos" trigger="accessoryAction" id="BuS-0s-bEQ"/>
+                                    <segue destination="tYk-Ve-ldO" kind="showDetail" identifier="showAllPhotos" id="wpc-IG-c7u"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="collection" textLabel="Hec-Fy-NzK" rowHeight="115" style="IBUITableViewCellStyleDefault" id="FGu-Dm-4uC" customClass="CustomTableViewCell" customModule="PictureApp" customModuleProvider="target">
@@ -118,6 +118,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X8D-Ge-a7k">
+                        <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -178,7 +179,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbS-yZ-ePO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="466"/>
+            <point key="canvasLocation" x="470" y="500"/>
         </scene>
     </scenes>
     <resources>
@@ -186,6 +187,6 @@
         <image name="list-simple-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hmt-wK-jXs"/>
+        <segue reference="wpc-IG-c7u"/>
     </inferredMetricsTieBreakers>
 </document>
