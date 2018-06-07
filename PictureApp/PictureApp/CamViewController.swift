@@ -68,7 +68,6 @@ class CamViewController: UIViewController{
                                  name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    // シャッターボタンで実行する
     @IBAction func takephoto(_ sender: Any) {
         if (authStatus == .authorized)&&(inOutStatus == .ready){
             let captureSetting = AVCapturePhotoSettings()
@@ -76,7 +75,7 @@ class CamViewController: UIViewController{
             captureSetting.isAutoStillImageStabilizationEnabled = true
             captureSetting.isHighResolutionPhotoEnabled = false
             // キャプチャのイメージ処理はデリゲートに任せる
-            photoOutputObj.capturePhoto(with: captureSetting, delegate: self as! AVCapturePhotoCaptureDelegate)
+            photoOutputObj.capturePhoto(with: captureSetting, delegate: self)
         } else {
             // カメラの利用を許可しなかったにも関わらずボタンをタップした（初回起動時のみ）
             showAlert(appName: "カメラ")
@@ -125,7 +124,7 @@ class CamViewController: UIViewController{
             let device = AVCaptureDevice.default(
                 AVCaptureDevice.DeviceType.builtInWideAngleCamera,
                 for: AVMediaType.video, // ビデオ入力
-                position: AVCaptureDevice.Position.back) // カメラの設定
+                position: AVCaptureDevice.Position.back) // バックカメラ
             
             // 入力元
             let input = try AVCaptureDeviceInput(device: device!)
@@ -160,6 +159,7 @@ class CamViewController: UIViewController{
         previewView.layer.addSublayer(previewLayer)
     }
     
+    //フラッシュのon,off
     @IBAction func changedevice(_ sender: Any) {
         if(toggle){
             ledFlash(flg: true)
@@ -182,10 +182,10 @@ class CamViewController: UIViewController{
                 try avDevice.lockForConfiguration()
                 
                 if (flg){
-                    // flash LED ON
+                    // フラッシュ LED ON
                     avDevice.torchMode = AVCaptureDevice.TorchMode.on
                 } else {
-                    // flash LED OFF
+                    // フラッシュ LED OFF
                     avDevice.torchMode = AVCaptureDevice.TorchMode.off
                 }
                 
@@ -199,6 +199,7 @@ class CamViewController: UIViewController{
             print("Torch is not available")
         }
     }
+    
     // デバイスの向きが変わったときに呼び出すメソッド
     @objc func changedDeviceOrientation(_ notification :Notification) {
         // photoOutputObj.connectionの回転向きをデバイスと合わせる
