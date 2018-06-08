@@ -19,14 +19,14 @@
                         <viewControllerLayoutGuide type="bottom" id="SvF-Y9-b8r"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WWY-Bs-XUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cx2-im-egP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-Kp-A1S" customClass="PHLivePhotoView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -46,13 +46,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Uzz-TK-jem">
                         <nil key="title"/>
-                        <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progressViewStyle="bar" progress="0.5" id="kFz-L3-kZB" userLabel="Progress View">
-                            <rect key="frame" x="12" y="21" width="532.5" height="2.5"/>
+                        <progressView key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="kFz-L3-kZB" userLabel="Progress View">
+                            <rect key="frame" x="8" y="21" width="315.5" height="2.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2Rr-7Y-6il">
                             <connections>
                                 <action selector="editAsset:" destination="3Fp-m4-LHW" id="FCw-uV-5jf"/>
+                                <segue destination="gCE-Ha-UpS" kind="showDetail" id="w9v-kl-ABh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,6 +89,14 @@
                 </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1242" y="501"/>
+        </scene>
+        <!--Imagechange-->
+        <scene sceneID="1vA-nO-HZ4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Imagechange" id="gCE-Ha-UpS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aJ-Ja-BNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1851" y="592"/>
         </scene>
     </scenes>
 </document>

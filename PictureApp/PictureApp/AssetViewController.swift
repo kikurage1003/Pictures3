@@ -97,7 +97,7 @@ class AssetViewController: UIViewController {
     // MARK: UI Actions
     
     @IBAction func editAsset(_ sender: UIBarButtonItem) {
-        // Use a UIAlertController to display editing options to the user.
+       /* // Use a UIAlertController to display editing options to the user.
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         #if os(iOS)
         alertController.modalPresentationStyle = .popover
@@ -124,7 +124,8 @@ class AssetViewController: UIViewController {
                                                     style: .default, handler: revertAsset))
         }
         // Present the UIAlertController.
-        present(alertController, animated: true)
+        present(alertController, animated: true) */
+        
         
     }
     
@@ -467,3 +468,5 @@ extension AssetViewController: PHLivePhotoViewDelegate {
         isPlayingHint = (playbackStyle == .hint)
     }
 }
+
+
