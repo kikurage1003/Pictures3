@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s30-8Z-cc9">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,19 +15,18 @@
             <objects>
                 <viewController id="s30-8Z-cc9" customClass="CamViewController" customModule="PictureApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hze-pP-8Rj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-NJ-PkG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-j4-cTX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeZ-j4-cTX">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-5f-FxV">
-                                        <rect key="frame" x="0.0" y="581" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1026" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <items>
                                             <barButtonItem systemItem="action" id="Zh3-dB-rCw">
@@ -48,7 +47,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlS-Ri-4tc">
-                                <rect key="frame" x="134" y="550" width="107" height="107"/>
+                                <rect key="frame" x="363" y="995" width="107" height="107"/>
                                 <state key="normal" backgroundImage="maru"/>
                                 <connections>
                                     <action selector="takephoto:" destination="s30-8Z-cc9" eventType="touchUpInside" id="kCh-mC-W7X"/>
@@ -57,8 +56,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="mlS-Ri-4tc" secondAttribute="bottom" constant="10" id="7sL-yL-rFF"/>
-                            <constraint firstItem="mlS-Ri-4tc" firstAttribute="centerX" secondItem="Hze-pP-8Rj" secondAttribute="centerX" id="uiz-ZF-BA2"/>
+                            <constraint firstItem="DeZ-j4-cTX" firstAttribute="leading" secondItem="NXL-wD-zfZ" secondAttribute="leading" id="1kw-5f-YS4"/>
+                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="trailing" secondItem="DeZ-j4-cTX" secondAttribute="trailing" id="Q7f-FK-pRh"/>
+                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="DeZ-j4-cTX" secondAttribute="bottom" id="UQK-3e-coY"/>
+                            <constraint firstItem="DeZ-j4-cTX" firstAttribute="top" secondItem="Hze-pP-8Rj" secondAttribute="top" id="saw-iS-WOV"/>
+                            <constraint firstItem="mlS-Ri-4tc" firstAttribute="centerX" secondItem="Hze-pP-8Rj" secondAttribute="centerX" id="uQo-Z9-X47"/>
+                            <constraint firstItem="NXL-wD-zfZ" firstAttribute="bottom" secondItem="mlS-Ri-4tc" secondAttribute="bottom" constant="10" id="v0o-hE-8xM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NXL-wD-zfZ"/>
                     </view>
