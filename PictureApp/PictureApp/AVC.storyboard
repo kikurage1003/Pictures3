@@ -53,7 +53,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="2Rr-7Y-6il">
                             <connections>
                                 <action selector="editAsset:" destination="3Fp-m4-LHW" id="FCw-uV-5jf"/>
-                                <segue destination="gCE-Ha-UpS" kind="showDetail" id="w9v-kl-ABh"/>
+                                <segue destination="gCE-Ha-UpS" kind="showDetail" id="5c2-TP-PKY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,10 +93,12 @@
         <!--Imagechange-->
         <scene sceneID="1vA-nO-HZ4">
             <objects>
-                <viewControllerPlaceholder storyboardName="Imagechange" id="gCE-Ha-UpS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Imagechange" id="gCE-Ha-UpS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="86Y-YK-mmJ"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aJ-Ja-BNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="592"/>
+            <point key="canvasLocation" x="1885" y="619"/>
         </scene>
     </scenes>
 </document>

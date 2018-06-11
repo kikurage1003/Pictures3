@@ -1,0 +1,24 @@
+
+/* Class = "UITabBarItem"; title = "camera roll"; ObjectID = "ADn-qw-ao4"; */
+"ADn-qw-ao4.title" = "camera roll";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Hec-Fy-NzK"; */
+"Hec-Fy-NzK.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "MaW-n7-bqV"; */
+"MaW-n7-bqV.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "camera"; ObjectID = "NvU-0E-Zme"; */
+"NvU-0E-Zme.title" = "camera";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "XLd-de-UPi"; */
+"XLd-de-UPi.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "pictures"; ObjectID = "jdl-ga-sPH"; */
+"jdl-ga-sPH.title" = "pictures";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "vaZ-gx-cf0"; */
+"vaZ-gx-cf0.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "photos"; ObjectID = "vpd-Cz-FKy"; */
+"vpd-Cz-FKy.title" = "photos";

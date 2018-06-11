@@ -49,6 +49,8 @@
 		4BF71ECE20C51FE600282E0F /* temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
 		CCDD27E720C950350069A012 /* ImagechangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagechangeViewController.swift; sourceTree = "<group>"; };
 		CCDD27E820C950350069A012 /* Imagechange.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Imagechange.storyboard; sourceTree = "<group>"; };
+		CCDD27ED20CE524C0069A012 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CCDD27EE20CE524C0069A012 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F72C62422095B7C1000061D0 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		F7D2B42120C5328900700161 /* CamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
 		F7D2B42320C532AE00700161 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B95651D20959F7F00F84294 /* Base */,
+				CCDD27ED20CE524C0069A012 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B95652220959F8000F84294 /* Base */,
+				CCDD27EE20CE524C0069A012 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -226,6 +230,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -286,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -341,13 +347,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82D2823FXQ;
+				DEVELOPMENT_TEAM = 2Q536XPU3S;
 				INFOPLIST_FILE = PictureApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PictureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = paisen.PictureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -359,13 +365,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82D2823FXQ;
+				DEVELOPMENT_TEAM = 2Q536XPU3S;
 				INFOPLIST_FILE = PictureApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PictureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = paisen.PictureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
