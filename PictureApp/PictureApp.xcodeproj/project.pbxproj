@@ -22,6 +22,7 @@
 		4BEF50E32095A21D00938BBA /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */; };
 		4BEF50E42095A21D00938BBA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF50DE2095A21D00938BBA /* MasterViewController.swift */; };
 		4BF71ECF20C51FE600282E0F /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF71ECE20C51FE600282E0F /* temp.storyboard */; };
+		CC2BFA7D20D7987F00B34A89 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2BFA7C20D7987F00B34A89 /* Delivery.swift */; };
 		CCDD27E920C950350069A012 /* ImagechangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD27E720C950350069A012 /* ImagechangeViewController.swift */; };
 		CCDD27EA20C950350069A012 /* Imagechange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCDD27E820C950350069A012 /* Imagechange.storyboard */; };
 		F72C62432095B7C1000061D0 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72C62422095B7C1000061D0 /* Camera.storyboard */; };
@@ -47,6 +48,7 @@
 		4BEF50DD2095A21D00938BBA /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridViewController.swift; sourceTree = "<group>"; };
 		4BEF50DE2095A21D00938BBA /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		4BF71ECE20C51FE600282E0F /* temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
+		CC2BFA7C20D7987F00B34A89 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		CCDD27E720C950350069A012 /* ImagechangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagechangeViewController.swift; sourceTree = "<group>"; };
 		CCDD27E820C950350069A012 /* Imagechange.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Imagechange.storyboard; sourceTree = "<group>"; };
 		CCDD27ED20CE524C0069A012 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				F72C62422095B7C1000061D0 /* Camera.storyboard */,
 				CCDD27E820C950350069A012 /* Imagechange.storyboard */,
 				CCDD27E720C950350069A012 /* ImagechangeViewController.swift */,
+				CC2BFA7C20D7987F00B34A89 /* Delivery.swift */,
 			);
 			path = PictureApp;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				CCDD27E920C950350069A012 /* ImagechangeViewController.swift in Sources */,
 				4BEF50E32095A21D00938BBA /* AssetGridViewController.swift in Sources */,
 				4B95651920959F7F00F84294 /* AppDelegate.swift in Sources */,
+				CC2BFA7D20D7987F00B34A89 /* Delivery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

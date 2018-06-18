@@ -71,7 +71,7 @@ class CamViewController: UIViewController{
     @IBAction func takephoto(_ sender: Any) {
         if (authStatus == .authorized)&&(inOutStatus == .ready){
             let captureSetting = AVCapturePhotoSettings()
-            captureSetting.flashMode = .auto
+            captureSetting.flashMode = .off
             captureSetting.isAutoStillImageStabilizationEnabled = true
             captureSetting.isHighResolutionPhotoEnabled = false
             // キャプチャのイメージ処理はデリゲートに任せる

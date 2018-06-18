@@ -301,6 +301,5 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         // Dispose of any resources that can be recreated.
     }
 
-
 }
 
