@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="hyu-Cn-9oc" kind="relationship" relationship="rootViewController" id="5pt-RF-PBo"/>
+                        <segue destination="74A-ux-3Q3" kind="relationship" relationship="rootViewController" id="zFw-eg-Chs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6W-R9-iKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,6 +180,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbS-yZ-ePO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="470" y="500"/>
+        </scene>
+        <!--Asset Grid View Controller-->
+        <scene sceneID="5Pe-dL-Kta">
+            <objects>
+                <collectionViewController id="74A-ux-3Q3" customClass="AssetGridViewController" customModule="PictureApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aj4-6N-t2S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="tFI-D0-5hF">
+                            <size key="itemSize" width="92" height="92"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridViewCell" id="ZmJ-SG-TGr" customClass="GridViewCell" customModule="PictureApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-Le-byg">
+                                            <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="28" placeholder="YES" id="Fjp-rA-icP"/>
+                                                <constraint firstAttribute="height" constant="28" placeholder="YES" id="ewn-gN-Ffm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqq-V2-ArF">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Lwb-Le-byg" firstAttribute="leading" secondItem="ZmJ-SG-TGr" secondAttribute="leading" id="0IF-2m-icH"/>
+                                    <constraint firstItem="Lwb-Le-byg" firstAttribute="top" secondItem="ZmJ-SG-TGr" secondAttribute="top" id="Zjc-wS-avW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iqq-V2-ArF" secondAttribute="bottom" id="fRL-SK-vGV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iqq-V2-ArF" secondAttribute="trailing" id="gHt-pu-xhw"/>
+                                    <constraint firstItem="Iqq-V2-ArF" firstAttribute="leading" secondItem="ZmJ-SG-TGr" secondAttribute="leading" id="pI3-8D-hV6"/>
+                                    <constraint firstItem="Iqq-V2-ArF" firstAttribute="top" secondItem="ZmJ-SG-TGr" secondAttribute="top" id="wyy-jC-ovk"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="Iqq-V2-ArF" id="Uhk-eK-I5K"/>
+                                    <outlet property="livePhotoBadgeImageView" destination="Lwb-Le-byg" id="4J4-3a-E7U"/>
+                                    <segue destination="B1t-Kg-beW" kind="showDetail" id="Dlt-3e-rTt"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="74A-ux-3Q3" id="RDq-sX-kQl"/>
+                            <outlet property="delegate" destination="74A-ux-3Q3" id="sMd-Io-g5J"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="vvv-A0-I39"/>
+                    <connections>
+                        <outlet property="addButtonItem" destination="EAB-tz-bEJ" id="lOp-Ne-XlU"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0n-D0-muw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="add" id="EAB-tz-bEJ">
+                    <connections>
+                        <action selector="addAsset:" destination="74A-ux-3Q3" id="Pg4-B7-St9"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="322" y="501"/>
+        </scene>
+        <!--AVC-->
+        <scene sceneID="0SX-iZ-cd7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AVC" id="B1t-Kg-beW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pF-Ud-ODH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="500"/>
         </scene>
     </scenes>
     <resources>
