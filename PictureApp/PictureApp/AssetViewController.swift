@@ -434,6 +434,7 @@ class AssetViewController: UIViewController {
         export.videoComposition = composition
         export.exportAsynchronously(completionHandler: completion)
     }
+    
 }
 
 // MARK: PHPhotoLibraryChangeObserver
@@ -468,5 +469,3 @@ extension AssetViewController: PHLivePhotoViewDelegate {
         isPlayingHint = (playbackStyle == .hint)
     }
 }
-
-
