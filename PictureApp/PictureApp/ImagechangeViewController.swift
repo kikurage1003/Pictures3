@@ -172,13 +172,16 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         //Alertを表示する
         present(alert, animated: true, completion: nil)
     }
- 
+    
+    var param : UIImage?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imageView.image = self.param
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    /*
     // UIImageViewがタップされた時に呼ばれる。ImagePickerを表示させる
     @IBAction func handletap(_ sender: UITapGestureRecognizer) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)
@@ -205,6 +208,9 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         //imagePickerを閉じる
         picker.dismiss(animated: true, completion: nil)
     }
+    */
+    
+    
     
     @IBAction func rightRotation(_ sender: UIButton) {
         var transRotate = CGAffineTransform()
