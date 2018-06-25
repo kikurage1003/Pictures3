@@ -435,6 +435,18 @@ class AssetViewController: UIViewController {
         export.exportAsynchronously(completionHandler: completion)
     }
     
+    //画面遷移
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondViewController:ViewController = segue.destination as! ViewController
+        secondViewController.param = self.imageView.image!;
+    }
+    
+    
+    //画像編集から戻ってきた時の処理
+    @IBAction func backFromSecondView(segue:UIStoryboardSegue){
+        NSLog("FirstViewController#backFromSecondView")
+    }
+    
 }
 
 // MARK: PHPhotoLibraryChangeObserver

@@ -89,7 +89,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="アルバムに戻る" image="back"/>
                                 <connections>
-                                    <segue destination="egA-54-ehH" kind="showDetail" id="x5S-UN-WGZ"/>
+                                    <segue destination="n3F-rP-SSI" kind="unwind" unwindAction="backFromSecondViewWithSegue:" id="2xB-hc-hN4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bright" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-Fo-rpq">
@@ -112,11 +112,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="dAj-Ky-1K5">
-                    <connections>
-                        <action selector="handletap:" destination="BYZ-38-t0r" id="DHt-oe-ebE"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <exit id="n3F-rP-SSI" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="dAj-Ky-1K5"/>
             </objects>
         </scene>
         <!--Main-->
