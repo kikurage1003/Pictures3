@@ -11,16 +11,16 @@ import UIKit
 import Photos
 import PhotosUI
 
-class AssetViewController: UIViewController {
+class AssetViewController: UIViewController ,UIScrollViewDelegate{
     
     var asset: PHAsset!
     var assetCollection: PHAssetCollection!
-    
+    @IBOutlet weak var scView : UIScrollView!;
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var livePhotoView: PHLivePhotoView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var progressView: UIProgressView!
-    
+    var shareImage:UIImage?
     #if os(tvOS)
     @IBOutlet var livePhotoPlayButton: UIBarButtonItem!
     #endif
@@ -28,6 +28,7 @@ class AssetViewController: UIViewController {
     @IBOutlet var playButton: UIBarButtonItem!
     @IBOutlet var space: UIBarButtonItem!
     @IBOutlet var trashButton: UIBarButtonItem!
+    @IBOutlet var sharebutton: UIBarButtonItem!
     @IBOutlet var favoriteButton: UIBarButtonItem!
     
     fileprivate var playerLayer: AVPlayerLayer!
@@ -37,12 +38,18 @@ class AssetViewController: UIViewController {
     fileprivate let formatVersion = "1.0"
     fileprivate lazy var ciContext = CIContext()
     
+    
     // MARK: UIViewController / Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         livePhotoView.delegate = self
         PHPhotoLibrary.shared().register(self)
+        self.scView.delegate = self;
+        
+        self.scView.minimumZoomScale = 1;
+        self.scView.maximumZoomScale = 8;
+ 
     }
     
     deinit {
@@ -55,16 +62,16 @@ class AssetViewController: UIViewController {
         // Set the appropriate toolbarItems based on the mediaType of the asset.
         if asset.mediaType == .video {
             #if os(iOS)
-            toolbarItems = [favoriteButton, space, playButton, space, trashButton]
+            toolbarItems = [favoriteButton, space, playButton, space, trashButton,sharebutton]
             navigationController?.isToolbarHidden = false
             #elseif os(tvOS)
-            navigationItem.leftBarButtonItems = [playButton, favoriteButton, trashButton]
+            navigationItem.leftBarButtonItems = [playButton, favoriteButton, trashButton,sharebutton]
             #endif
         } else {
             #if os(iOS)
             // In iOS, present both stills and Live Photos the same way, because
             // PHLivePhotoView provides the same gesture-based UI as in Photos app.
-            toolbarItems = [favoriteButton, space, trashButton]
+            toolbarItems = [favoriteButton, space, sharebutton,space,trashButton]
             navigationController?.isToolbarHidden = false
             #elseif os(tvOS)
             // In tvOS, PHLivePhotoView doesn't do playback gestures,
@@ -97,7 +104,7 @@ class AssetViewController: UIViewController {
     // MARK: UI Actions
     
     @IBAction func editAsset(_ sender: UIBarButtonItem) {
-       /* // Use a UIAlertController to display editing options to the user.
+        // Use a UIAlertController to display editing options to the user.
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         #if os(iOS)
         alertController.modalPresentationStyle = .popover
@@ -124,8 +131,7 @@ class AssetViewController: UIViewController {
                                                     style: .default, handler: revertAsset))
         }
         // Present the UIAlertController.
-        present(alertController, animated: true) */
-        
+        present(alertController, animated: true)
         
     }
     
@@ -214,6 +220,36 @@ class AssetViewController: UIViewController {
                 print("can't set favorite: \(error)")
             }
         })
+    }
+    
+    
+    @objc func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView;
+    }
+    
+    
+    @IBAction func shareAction(_ sender: Any) {
+    /*
+        guard let shareImage = shareImage else {
+            return
+        }
+ */
+        shareImage = imageView.image;
+        let activities = [shareImage] as [Any]
+        let activityVC = UIActivityViewController(activityItems: activities, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    
+    
+    private func scrollViewDidZoom(scrollView: UIScrollView) {
+        print("zoom")
+        scView.contentInset = UIEdgeInsetsMake(
+            max((scView.frame.height - imageView.frame.height)/2.0, 0),
+            max((scView.frame.width - imageView.frame.width)/2.0, 0),
+            0,
+            0
+        );
     }
     
     // MARK: Image display
@@ -434,19 +470,6 @@ class AssetViewController: UIViewController {
         export.videoComposition = composition
         export.exportAsynchronously(completionHandler: completion)
     }
-    
-    //画面遷移
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondViewController:ViewController = segue.destination as! ViewController
-        secondViewController.param = self.imageView.image!;
-    }
-    
-    
-    //画像編集から戻ってきた時の処理
-    @IBAction func backFromSecondView(segue:UIStoryboardSegue){
-        NSLog("FirstViewController#backFromSecondView")
-    }
-    
 }
 
 // MARK: PHPhotoLibraryChangeObserver

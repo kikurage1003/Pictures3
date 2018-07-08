@@ -59,12 +59,14 @@ class AssetGridViewController: UICollectionViewController {
         let cellSize = (collectionViewLayout as! UICollectionViewFlowLayout).itemSize
         thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
 
+        /*
         // Add button to the navigation bar if the asset collection supports adding content.
         if assetCollection == nil || assetCollection.canPerform(.addContent) {
             navigationItem.rightBarButtonItem = addButtonItem
         } else {
             navigationItem.rightBarButtonItem = nil
         }
+ */
     }
 
     override func viewDidAppear(_ animated: Bool) {

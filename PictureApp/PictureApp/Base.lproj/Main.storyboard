@@ -91,6 +91,7 @@
         <!--Item-->
         <scene sceneID="L5L-Sw-Gls">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zO-bU-bQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="pS1-ZN-uRh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vaZ-gx-cf0"/>
                     <navigationItem key="navigationItem" id="8HN-nQ-Thn"/>
@@ -102,7 +103,6 @@
                         <segue destination="NX2-jd-TvX" kind="relationship" relationship="rootViewController" id="mGY-dX-icf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9zO-bU-bQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-525" y="-215"/>
         </scene>
@@ -132,6 +132,7 @@
         <!--pictures-->
         <scene sceneID="87b-wA-dcO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCc-03-MAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="p7l-Or-NhH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="pictures" image="list-simple-7" id="jdl-ga-sPH"/>
                     <connections>
@@ -139,7 +140,6 @@
                         <segue destination="tYk-Ve-ldO" kind="relationship" relationship="detailViewController" id="hmt-wK-jXs"/>
                     </connections>
                 </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iCc-03-MAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1625" y="132"/>
         </scene>

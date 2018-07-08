@@ -30,7 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         //let navigationController = tabBarController.viewControllers?.last! as! UINavigationController
         //navigationController.topViewController!.navigationItem.leftBarButtonItem = tabBarController.displayModeButtonItem
          //splitViewController.delegate = self
-        return true
+        /*
+        self.window = UIWindow(frame:UIScreen.main.bounds);
+        let storyboard = UIStoryboard(name:"Main",bundle:nil);
+        let initi = storyboard.instantiateViewController(withIdentifier: "start");
+        self.window?.rootViewController = initi;
+        self.window?.makeKeyAndVisible();
+ */
+ return true
     }
 
     // MARK: Split view

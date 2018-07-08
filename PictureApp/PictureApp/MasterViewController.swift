@@ -72,7 +72,7 @@ class MasterViewController: UITableViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
+       // self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
     
@@ -93,6 +93,7 @@ class MasterViewController: UITableViewController{
                 })
             }
         })
+        alertController.addAction(UIAlertAction(title: "Cancel", style:.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
     
