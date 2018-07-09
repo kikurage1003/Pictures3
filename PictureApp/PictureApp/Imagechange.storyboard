@@ -38,14 +38,6 @@
                                     <action selector="pushedMonochrome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vL2-Ao-TKt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDi-Rb-anQ">
-                                <rect key="frame" x="319" y="607" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存" image="download"/>
-                                <connections>
-                                    <action selector="savekari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gZ-4l-7VB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5m-dh-KAe">
                                 <rect key="frame" x="16" y="412" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -84,14 +76,6 @@
                                     <action selector="leftRotation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fL-XX-mfu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evu-Ii-O26">
-                                <rect key="frame" x="28" y="607" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="アルバムに戻る" image="back"/>
-                                <connections>
-                                    <segue destination="n3F-rP-SSI" kind="unwind" unwindAction="backFromSecondViewWithSegue:" id="2xB-hc-hN4"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bright" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-Fo-rpq">
                                 <rect key="frame" x="12" y="473" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -103,11 +87,36 @@
                                     <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OTL-H8-88q"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDi-Rb-anQ">
+                                <rect key="frame" x="319" y="596" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="保存" image="download"/>
+                                <connections>
+                                    <action selector="savekari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gZ-4l-7VB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evu-Ii-O26">
+                                <rect key="frame" x="28" y="596" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="アルバムに戻る" image="back"/>
+                                <connections>
+                                    <segue destination="n3F-rP-SSI" kind="unwind" unwindAction="backFromSecondViewWithSegue:" id="2xB-hc-hN4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg5-BL-mEp">
+                                <rect key="frame" x="156" y="601" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="ResetImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oks-Gl-k8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="brightslider" destination="faF-Kp-on2" id="QgU-2m-hUh"/>
                         <outlet property="imageView" destination="AOo-hU-uqx" id="uyY-jc-7rC"/>
                     </connections>
                 </viewController>
