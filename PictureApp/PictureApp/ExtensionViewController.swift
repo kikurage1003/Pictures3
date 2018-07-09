@@ -28,12 +28,15 @@ extension CamViewController:AVCapturePhotoCaptureDelegate {
         // Dataから写真イメージを作る
         if let stillImage = UIImage(data: photoData) {
             // アルバムに追加する
-            UIImageWriteToSavedPhotosAlbum(stillImage, self, nil, nil)
+            //UIImageWriteToSavedPhotosAlbum(stillImage, self, nil, nil)
             //シェアするイメージに代入する
             shareImage = stillImage
             
-            // UIImageからCGImageに変換を行う
-            stillImage2 = stillImage.cgImage
+            //画像の向きを変更する
+            let pinImage = resize(image: stillImage)
+            
+            // UIImageから回転させたのちにCGImageに変換を行う
+            stillImage2 = pinImage.cgImage
             let tmpName = ProcessInfo.processInfo.globallyUniqueString
             let tmpUrl = NSURL.fileURL(withPath: NSTemporaryDirectory() + tmpName + ".jpg")
             if let dest = CGImageDestinationCreateWithURL(tmpUrl as CFURL, kUTTypeJPEG, 1, nil) {
@@ -46,5 +49,18 @@ extension CamViewController:AVCapturePhotoCaptureDelegate {
             }
             
         }
+    }
+    
+    func resize(image: UIImage) -> UIImage {
+        // オリジナル画像のサイズを取得
+        let resizedSize = CGSize(width: image.size.width, height: image.size.height)
+        
+        // リサイズ後のUIImageを生成して返却
+        UIGraphicsBeginImageContext(resizedSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage!
     }
 }
