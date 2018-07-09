@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var brightslider: UISlider!
     var originalImage: UIImage?
+    var earliestImage: UIImage?
     var nawrote: CGFloat = 0
     
     //モノクロボタンが押された時、呼び出し
@@ -178,6 +180,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.image = self.param
+        self.originalImage = self.param
+        self.earliestImage = self.param
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -299,6 +303,20 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
          //CGImageRefからUIImageを生成して返す
          return UIImage(cgImage: cgimg, scale: 1.0, orientation: UIImageOrientation.up)
  */
+    }
+    
+    
+    @IBAction func ResetImage(_ sender: Any) {
+        //画像データを最初期のものに戻す
+        imageView.image = earliestImage
+        //輝度を初期値(0)に戻す
+        brightslider.value = 0
+        //回転を変更前に戻す
+        var transRotate = CGAffineTransform()
+        nawrote = 0
+        let angle = (nawrote) * CGFloat.pi / 180
+        transRotate = CGAffineTransform(rotationAngle: CGFloat(angle));
+        imageView.transform = transRotate
     }
     
     
