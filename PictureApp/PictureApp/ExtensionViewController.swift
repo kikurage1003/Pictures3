@@ -7,6 +7,7 @@
 //
 
 import Photos
+import MobileCoreServices
 
 // デリゲート部分を拡張する
 extension CamViewController:AVCapturePhotoCaptureDelegate {
@@ -30,6 +31,20 @@ extension CamViewController:AVCapturePhotoCaptureDelegate {
             UIImageWriteToSavedPhotosAlbum(stillImage, self, nil, nil)
             //シェアするイメージに代入する
             shareImage = stillImage
+            
+            // UIImageからCGImageに変換を行う
+            stillImage2 = stillImage.cgImage
+            let tmpName = ProcessInfo.processInfo.globallyUniqueString
+            let tmpUrl = NSURL.fileURL(withPath: NSTemporaryDirectory() + tmpName + ".jpg")
+            if let dest = CGImageDestinationCreateWithURL(tmpUrl as CFURL, kUTTypeJPEG, 1, nil) {
+                CGImageDestinationAddImage(dest, stillImage2!, meta)
+                CGImageDestinationFinalize(dest)
+                
+                PHPhotoLibrary.shared()
+                    .performChanges({ PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: tmpUrl) }
+                )
+            }
+            
         }
     }
 }
