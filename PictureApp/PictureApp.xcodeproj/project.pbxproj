@@ -13,6 +13,7 @@
 		4B95651E20959F7F00F84294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B95651C20959F7F00F84294 /* Main.storyboard */; };
 		4B95652020959F8000F84294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95651F20959F8000F84294 /* Assets.xcassets */; };
 		4B95652320959F8000F84294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B95652120959F8000F84294 /* LaunchScreen.storyboard */; };
+		4B965CB920FCB80B0006C011 /* 新規キャンバス.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B965CB820FCB80B0006C011 /* 新規キャンバス.png */; };
 		4BC1F60420A96AF600AE3A97 /* AGVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */; };
 		4BC1F60520A96AF600AE3A97 /* AVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60220A96AF600AE3A97 /* AVC.storyboard */; };
 		4BC1F60620A96AF600AE3A97 /* MVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1F60320A96AF600AE3A97 /* MVC.storyboard */; };
@@ -41,6 +42,7 @@
 		4B95651F20959F8000F84294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B95652220959F8000F84294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B95652420959F8000F84294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B965CB820FCB80B0006C011 /* 新規キャンバス.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新規キャンバス.png"; sourceTree = "<group>"; };
 		4BC1F60120A96AF500AE3A97 /* AGVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AGVC.storyboard; sourceTree = "<group>"; };
 		4BC1F60220A96AF600AE3A97 /* AVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AVC.storyboard; sourceTree = "<group>"; };
 		4BC1F60320A96AF600AE3A97 /* MVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVC.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				4BC1F60220A96AF600AE3A97 /* AVC.storyboard */,
 				4BC1F60320A96AF600AE3A97 /* MVC.storyboard */,
 				CB5DFE1720F8F1850015A794 /* gpsMap.storyboard */,
+				4B965CB820FCB80B0006C011 /* 新規キャンバス.png */,
 				4B95651F20959F8000F84294 /* Assets.xcassets */,
 				4B02D57220C1473C00AA52E7 /* camera-7.png */,
 				4B95652120959F8000F84294 /* LaunchScreen.storyboard */,
@@ -190,6 +193,7 @@
 				4B95651E20959F7F00F84294 /* Main.storyboard in Resources */,
 				4BF71ECF20C51FE600282E0F /* temp.storyboard in Resources */,
 				4BC1F60520A96AF600AE3A97 /* AVC.storyboard in Resources */,
+				4B965CB920FCB80B0006C011 /* 新規キャンバス.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,14 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 346P58G4JY;
+				DEVELOPMENT_TEAM = 82D2823FXQ;
 				INFOPLIST_FILE = PictureApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aaaaa.PictureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = s.PictureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,14 +382,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 346P58G4JY;
+				DEVELOPMENT_TEAM = 82D2823FXQ;
 				INFOPLIST_FILE = PictureApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aaaaa.PictureApp;
+				PRODUCT_BUNDLE_IDENTIFIER = s.PictureApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
